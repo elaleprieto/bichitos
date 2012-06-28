@@ -1,0 +1,44 @@
+h1 {
+	text-align: center;
+}
+p {
+	text-align: center;
+}
+.head {
+	width: 100%;
+}
+
+.lamparita {
+	width: 50%;
+	height: 50%;
+}
+.elefante {
+	height: 2%;
+    padding-right: 5px;
+    vertical-align: bottom;
+    width: 2%;
+}
+.bug {
+	height: 2%;
+    padding-right: 5px;
+    vertical-align: middle;
+    width: 4%;
+}
+footer > div > h1 {
+	color: #FFFFFF;
+	font-size: 14px;
+	 line-height: 25px;
+}
+footer {
+	bottom: 0;
+    top: auto;
+    -moz-box-sizing: border-box;
+    position: fixed;
+    width:100%;
+}
+#mensaje {
+	text-align: center;
+}
+.resaltar {
+	color: red;
+}

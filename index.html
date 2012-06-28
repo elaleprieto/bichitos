@@ -1,0 +1,84 @@
+<!doctype html>  
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+  
+	<title>Bichitos</title>
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="estilos.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+
+</head>
+
+<body class="cf">
+
+  <header class="span2">
+  	<div class="inner cf">
+  		<h1 class="alt span1 head">
+  			<img src="img/bug128.png" class="bug" />
+  			Bichitos para Todos
+  		</h1>
+  	<!--
+		<nav class="span1 col">
+				<ul class="cf">
+					<li><a class="alt" href="#">nav item</a></li>
+					<li><a class="alt" href="#">nav item</a></li>
+					<li><a class="alt" href="#">nav item</a></li>
+				</ul>
+		</nav>
+	-->
+	</div>
+  </header>
+
+  <div id="container" class="cf">  
+
+  	<article class="span1">
+		<section>
+			<h1>¡Prendé la luz!</h1>
+			<p>
+				<a href="<?=$_SERVER['PHP_SELF'] . "?action=on" ?>">
+					<img src="img/lamparita_on.svg" class="lamparita" />
+				</a>
+			</p>
+        </section>
+	</article>
+	<aside class="span1 col">
+		<h1>¡Apagá la luz!</h1>
+		<p>
+			<a href="<?=$_SERVER['PHP_SELF'] . "?action=off" ?>">
+				<img src="img/lamparita_off.svg" class="lamparita" />
+			</a>
+		</p>
+	</aside>
+
+	<div id="mensaje">
+		<h3>¡Bienvenido! Para empezar a jugar, haz clic sobre una lamparita...</h3>
+	</div>
+  </div> <!--! end of #container -->
+  <footer>
+		<div class="inner cf">
+		<h1>
+		<img src="img/elefante a colores.svg" class="elefante" />
+  		Colectivo Libre :: 2012</h1>
+  	<!--
+		<nav class="span1 col">
+				<ul class="cf">
+					<li><a class="alt" href="#">nav item</a></li>
+					<li><a class="alt" href="#">nav item</a></li>
+					<li><a class="alt" href="#">nav item</a></li>
+				</ul>
+		</nav>
+	-->
+		</div>
+  </footer>
+
+</body>
+</html>
+
