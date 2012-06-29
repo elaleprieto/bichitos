@@ -2,7 +2,7 @@
 include ("header.php");
 ?>
 <fieldset>
-	<legend>Inicio</legend>
+	<legend>Dirección</legend>
 	<article class="span1">
 		<section>
 			<form id="formulario">
