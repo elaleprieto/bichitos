@@ -65,18 +65,8 @@ class bichito extends phpSerial {
 		# 0       -> Hay que ponerlo
 		# address -> Dirección nueva
 		
-		//$mensaje = chr(255) . chr(70) . chr(0) . chr($address);
-		//$mensaje = 255 . 70 . 0 . $address;
-		//$mensaje = '#' . dechex(255) . dechex(70) . dechex(0) . dechex($address);
-		$mensaje = chr(255) . chr(70) . chr(0) . chr($address);
-		//$mensaje = chr('11111111' . '01000110' . '00000000' . '00011000');
-		//$mensaje = ' FA';
-		
 		// ComPort1.WriteStr(Chr(255)+Chr(70)+Chr(0)+Chr(address));
-		//$this -> sendMessage(chr(255) . chr(70) . chr(0) . chr($address));
-		//$this -> sendMessage(dechex(255) . dechex(70) . 0 . dechex($address));
-		$resultado = $this -> sendMessage($mensaje);
-		return $mensaje . ' ' . $resultado;
+		$this -> sendMessage(chr(255) . chr(70) . chr(0) . chr($address));
 	}
 
 	//procedure TForm1.MODBUS_write_single_coil(address,output_address,output_value:Integer);
@@ -91,6 +81,58 @@ class bichito extends phpSerial {
 		// ComPort1.WriteStr(Chr(address) + Chr(5) + Chr(0) + Chr(output_address) + Chr(output_value));
 		$this -> sendMessage(chr($address) . chr(5) . chr(0) . chr($output_address) . chr($output_value));
 	}
-
+	
+	/**
+	 * accionar(): similar a write_single_coil pero más humanizada
+	 * @param $direccion
+	 * @param $pin
+	 * @param $accion
+	 */
+	 public function accionar($direccion, $accion, $pin = 0) {
+	 	# function write_single_coil($address, $output_address, $output_value) {
+		# 	Significado de los valores:
+		# 		address         -> Direccion del dispositivo esclavo
+		# 		5               -> Comando para escribir salida
+		# 		0               -> Hay que ponerlo
+		#		output_address  -> Direccion del pin de salida del 0 al 3
+		# 		output_value    -> Encendido o apagado 1 o 0
+		
+		// ComPort1.WriteStr(Chr(address) + Chr(5) + Chr(0) + Chr(output_address) + Chr(output_value));
+		$this -> sendMessage(chr($direccion) . chr(5) . chr(0) . chr($pin) . chr($accion));
+	 }
+	 
+	 
+	 
+	 //procedure TForm1.MODBUS_write_single_register(address,output_address,output_value:Integer);
+	public function write_single_register($address, $output_address, $output_value) {
+		//address         -> Direccion del dispositivo esclavo
+		//6               -> Comando para escribir registro
+		//0               -> Hay que ponerlo
+		//output_address  -> Direccion del pin de salida del 0 al 3
+		//Output_value    -> Valor del PWM de 0 a 255
+		
+		// ComPort1.WriteStr(Chr(address) + Chr(6) + Chr(0) + Chr(output_address) + Chr(output_value));
+		$this -> sendMessage(chr($address) . chr(6) . chr(0) . chr($output_address) . chr($output_value));
+	}
+	 
+	 
+	/**
+	 * colorear(): similar a write_single_register pero más humanizada
+	 * @param $direccion
+	 * @param $pin
+	 * @param $color
+	 */
+	 public function colorear($direccion, $color, $pin = 0) {
+	 	# function write_single_coil($address, $output_address, $output_value) {
+		# 	Significado de los valores:
+		# 		address         -> Direccion del dispositivo esclavo
+		# 		6               -> Comando para escribir registro
+		# 		0               -> Hay que ponerlo
+		#		output_address  -> Direccion del pin de salida del 0 al 3
+		# 		output_value    -> Valor del PWM de 0 a 255
+		
+		// ComPort1.WriteStr(Chr(address) + Chr(5) + Chr(0) + Chr(output_address) + Chr(output_value));
+		$this -> sendMessage(chr($direccion) . chr(5) . chr(0) . chr($pin) . chr($color));
+	 }
 }
 ?>
