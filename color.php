@@ -18,7 +18,7 @@
 					<input placeholder="Dirección" type="text" name="direccion" class="atributo" id="direccion" />
 				</div>
 				<div class="atributo">
-					<label for="color">Escribe un pin de salida</label>
+					<label for="pin">Escribe un pin de salida</label>
 					<input value="0" type="text" name="pin" class="atributo" id="pin" />
 				</div>
 				<div class="atributo">
